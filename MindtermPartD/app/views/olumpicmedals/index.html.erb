@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Olumpicmedals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Athlete name</th>
+      <th>Event</th>
+      <th>Country</th>
+      <th>Medal type</th>
+      <th>Event date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @olumpicmedals.each do |olumpicmedal| %>
+      <tr>
+        <td><%= olumpicmedal.athlete_name %></td>
+        <td><%= olumpicmedal.event %></td>
+        <td><%= olumpicmedal.country %></td>
+        <td><%= olumpicmedal.medal_type %></td>
+        <td><%= olumpicmedal.event_date %></td>
+        <td><%= link_to 'Show', olumpicmedal %></td>
+        <td><%= link_to 'Edit', edit_olumpicmedal_path(olumpicmedal) %></td>
+        <td><%= link_to 'Destroy', olumpicmedal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Olumpicmedal', new_olumpicmedal_path %>
